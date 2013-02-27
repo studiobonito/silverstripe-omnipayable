@@ -52,7 +52,7 @@ abstract class OmnipayableForm extends Form
 
             $data['Amount'] = $this->amount;
 
-            $response = $this->gateway->purchase($data);
+            $response = $this->gateway->purchase($data)->send();
 
             if ($response->isSuccessful()) {
                 // Payment is complete
@@ -82,7 +82,7 @@ abstract class OmnipayableForm extends Form
 
             $data['Amount'] = $this->amount;
 
-            $response = $this->gateway->completePurchase($data);
+            $response = $this->gateway->completePurchase($data)->send();
 
             if ($response->isSuccessful()) {
                 // Payment is complete
