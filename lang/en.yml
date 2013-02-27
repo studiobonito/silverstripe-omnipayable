@@ -1,0 +1,37 @@
+en:
+  Omnipayable:
+    ERROR: 'There was an error processing your payment. Please try agian later.'
+    FAILURE: '{message}'
+    PAY: Pay
+    SUCCESS: 'Payment successful!'
+  OmnipayableForm:
+    BILLING: 'Billing Address'
+    BILLINGADDRESS1: 'Address 1'
+    BILLINGADDRESS2: 'Address 2'
+    BILLINGCITY: City
+    BILLINGCOUNTRY: Country
+    BILLINGPHONE: Phone
+    BILLINGPOSTCODE: Postcode
+    BILLINGSTATE: State
+    COMPANY: Company
+    CREDITCARDDETAILS: 'Credit card detials'
+    CVV: CVV
+    EMAIL: Email
+    EXPIRYMONTH: 'Expiry month'
+    EXPIRYYEAR: 'Expiry year'
+    FIRSTNAME: 'First name'
+    ISSUENUMBER: 'Issue number'
+    LASTNAME: 'Last name'
+    NUMBER: Number
+    PERSONALDETAILS: 'Personal detials'
+    SHIPPING: 'Shipping Address'
+    SHIPPINGADDRESS1: 'Address 1'
+    SHIPPINGADDRESS2: 'Address 2'
+    SHIPPINGCITY: City
+    SHIPPINGCOUNTRY: Country
+    SHIPPINGPHONE: Phone
+    SHIPPINGPOSTCODE: Postcode
+    SHIPPINGSTATE: State
+    STARTMONTH: 'Start month'
+    STARTYEAR: 'Start year'
+    TYPE: Type
