@@ -344,6 +344,11 @@ class OmnipayableForm_GoCardless extends OmnipayableForm
 
         return $data;
     }
+
+    protected function getCreditCardFields()
+    {
+        return new FieldList();
+    }
 }
 
 /**
@@ -371,6 +376,11 @@ class OmnipayableForm_PayPal_Express extends OmnipayableForm
         $data['cancelUrl'] = $returnUrl;
 
         return $data;
+    }
+
+    protected function getCreditCardFields()
+    {
+        return new FieldList();
     }
 }
 
