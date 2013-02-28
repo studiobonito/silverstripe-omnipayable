@@ -193,6 +193,7 @@ abstract class OmnipayableForm extends Form
         $startYearDropdownField->setHasEmptyDefault(true);
         $issueNumberTextField = new TextField('IssueNumber', _t('OmnipayableForm.ISSUENUMBER', 'Issue number'));
         $typeDropdownField = new DropdownField('Type', _t('OmnipayableForm.TYPE', 'Card type'), $this->getCreditCardTypes());
+        $typeDropdownField->setHasEmptyDefault(true);
 
         $expiryDateFieldGroup = new FieldGroup();
         $expiryDateFieldGroup->push($expiryMonthDropdownField);
