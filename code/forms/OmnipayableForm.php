@@ -444,9 +444,14 @@ class OmnipayableForm_GoCardless extends OmnipayableForm
         return $data;
     }
 
-    protected function getCreditCardFields()
+    protected function getPaymentFields()
     {
-        return new FieldList();
+        $fields = parent::getPaymentFields();
+
+        $fields->removeByName('CardDetails');
+        $fields->removeByName('ShippingAddress');
+
+        return $fields;
     }
 }
 
@@ -477,9 +482,14 @@ class OmnipayableForm_PayPal_Express extends OmnipayableForm
         return $data;
     }
 
-    protected function getCreditCardFields()
+    protected function getPaymentFields()
     {
-        return new FieldList();
+        $fields = parent::getPaymentFields();
+
+        $fields->removeByName('CardDetails');
+        $fields->removeByName('ShippingAddress');
+
+        return $fields;
     }
 }
 
