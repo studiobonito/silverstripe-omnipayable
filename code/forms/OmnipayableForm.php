@@ -3,7 +3,7 @@
 use Omnipay\Common\GatewayFactory;
 
 /**
- * OmnipayableForm.
+ * OmnipayableForm provides a base Form for sending payments via the Omnipay library.
  *
  * @author Tom Densham <tom.densham@studiobonito.co.uk>
  * @copyright (c) 2012, Studio Bonito Ltd.
@@ -11,10 +11,27 @@ use Omnipay\Common\GatewayFactory;
  */
 abstract class OmnipayableForm extends Form
 {
+    /**
+     * Store the current gateway.
+     *
+     * @var Omnipay\Common\GatewayInterface
+     */
     protected $gateway;
 
+    /**
+     * Store the payment amount.
+     *
+     * @var int
+     */
     protected $amount;
 
+    /**
+     * Create the Form and the relevant gateway.
+     * Set properties on gateway from config.
+     *
+     * @param Controller $controller
+     * @param string $name
+     */
     public function __construct($controller, $name = 'OmnipayableForm')
     {
         $fields = $this->getPaymentFields();
@@ -38,16 +55,36 @@ abstract class OmnipayableForm extends Form
         }
     }
 
+    /**
+     * Set the payment amount.
+     * Remove the decimal point if present.
+     *
+     * @param int|float|string $amount
+     */
     public function setAmount($amount)
     {
         $this->amount = (int) preg_replace('/([0-9]*)\.([0-9]*)/', '$1$2', $amount);
     }
 
+    /**
+     * Set the currency used to make the payment.
+     *
+     * For a list of valid currency codes see {@link Omnipay\Common\Currency}
+     *
+     * @param string $currencyCode
+     */
     public function setCurrency($currencyCode)
     {
         $this->gateway->setCurrency($currencyCode);
     }
 
+    /**
+     * Process the form submission and send the payment request via the gateway.
+     *
+     * @param array $data
+     * @param Form $form
+     * @return null
+     */
     public function doProcessPayment(array $data, Form $form)
     {
         try {
@@ -78,6 +115,12 @@ abstract class OmnipayableForm extends Form
         return $this->controller->redirectBack();
     }
 
+    /**
+     * Handle the response from off-site gateways.
+     *
+     * @param SS_HTTPRequest $request
+     * @return null
+     */
     public function doProcessPaymentRedirect(SS_HTTPRequest $request)
     {
         try {
@@ -106,6 +149,11 @@ abstract class OmnipayableForm extends Form
         return $this->controller->redirectBack();
     }
 
+    /**
+     * Get a list of available credit cards.
+     *
+     * @return array
+     */
     protected function getCreditCardTypes()
     {
         return array(
@@ -124,6 +172,11 @@ abstract class OmnipayableForm extends Form
         );
     }
 
+    /**
+     * Get a translatable list of months of the year.
+     *
+     * @return array
+     */
     protected function getMonths()
     {
         return array(
@@ -142,6 +195,12 @@ abstract class OmnipayableForm extends Form
         );
     }
 
+    /**
+     * Get a list of years starting from the current year.
+     *
+     * @param int $range
+     * @return array
+     */
     protected function getYears($range = 20)
     {
         $years = array();
@@ -162,6 +221,12 @@ abstract class OmnipayableForm extends Form
         return $years;
     }
 
+    /**
+     * Create form fields to represent all of the properties on the {@link Omnipay\Common\CreditCard} object.
+     * The form fields are split up into relevent sections to help with adding/removing fields as needed.
+     *
+     * @return FieldList
+     */
     protected function getCreditCardFields()
     {
         $fields = new FieldList();
@@ -276,6 +341,12 @@ abstract class OmnipayableForm extends Form
         return $fields;
     }
 
+    /**
+     * Primary method for generating the form fields used.
+     * Includes an extension to allow custom extensions.
+     *
+     * @return FieldList
+     */
     protected function getPaymentFields()
     {
         $fields = new FieldList();
@@ -288,6 +359,12 @@ abstract class OmnipayableForm extends Form
         return $fields;
     }
 
+    /**
+     * Primary method for generating the form actions.
+     * Includes an extension to allow custom extensions.
+     *
+     * @return FieldList
+     */
     protected function getPaymentActions()
     {
         $actions = new FieldList();
@@ -299,6 +376,12 @@ abstract class OmnipayableForm extends Form
         return $actions;
     }
 
+    /**
+     * Primary method for generating the required fields.
+     * Includes an extension to allow custom extensions.
+     *
+     * @return RequiredFields
+     */
     protected function getRequiredFields()
     {
         $required = array();
@@ -308,6 +391,13 @@ abstract class OmnipayableForm extends Form
         return new RequiredFields($required);
     }
 
+    /**
+     * Process the form data in order to ensure that it is in a format that the gateway can use.
+     * This method is useful when extending the form for specific gateways.
+     *
+     * @param array $data
+     * @return array
+     */
     protected function processPaymentData($data)
     {
         $creditCardData = array();
