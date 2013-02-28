@@ -169,7 +169,7 @@ abstract class OmnipayableForm extends Form
 
         // Create personal details group
         $personalFieldGroup = new FieldGroup();
-        $personalFieldGroup->setTitle(_t('OmnipayableForm.PERSONALDETAILS', 'Personal detials'));
+        $personalFieldGroup->setTitle(_t('OmnipayableForm.PERSONALDETAILS', 'Personal Detials'));
 
         // Add basic fields to personal details group
         $personalFieldGroup->push($firstNameTextField);
@@ -181,8 +181,8 @@ abstract class OmnipayableForm extends Form
         $fields->push($personalFieldGroup);
 
         // Create credit card detail fields
-        $numberCreditCardField = new CreditCardField('Number', _t('OmnipayableForm.NUMBER', 'Number'));
-        $cvvTextField = new TextField('Cvv', _t('OmnipayableForm.CVV', 'CVV'));
+        $numberCreditCardField = new CreditCardField('Number', _t('OmnipayableForm.NUMBER', 'Card number'));
+        $cvvTextField = new TextField('Cvv', _t('OmnipayableForm.CVV', 'Security number'));
         $expiryMonthDropdownField = new DropdownField('ExpiryMonth', _t('OmnipayableForm.EXPIRYMONTH', 'Expiry month'), $this->getMonths());
         $expiryMonthDropdownField->setHasEmptyDefault(true);
         $expiryYearDropdownField = new DropdownField('ExpiryYear', _t('OmnipayableForm.EXPIRYYEAR', 'Expiry year'), $this->getYears(20));
@@ -192,7 +192,7 @@ abstract class OmnipayableForm extends Form
         $startYearDropdownField = new DropdownField('StartYear', _t('OmnipayableForm.STARTYEAR', 'Start year'), $this->getYears(-20));
         $startYearDropdownField->setHasEmptyDefault(true);
         $issueNumberTextField = new TextField('IssueNumber', _t('OmnipayableForm.ISSUENUMBER', 'Issue number'));
-        $typeDropdownField = new DropdownField('Type', _t('OmnipayableForm.TYPE', 'Type'), $this->getCreditCardTypes());
+        $typeDropdownField = new DropdownField('Type', _t('OmnipayableForm.TYPE', 'Card type'), $this->getCreditCardTypes());
 
         $expiryDateFieldGroup = new FieldGroup();
         $expiryDateFieldGroup->push($expiryMonthDropdownField);
@@ -204,7 +204,7 @@ abstract class OmnipayableForm extends Form
 
         // Create credit card details group
         $creditCardFieldGroup = new FieldGroup();
-        $creditCardFieldGroup->setTitle(_t('OmnipayableForm.CREDITCARDDETAILS', 'Credit card detials'));
+        $creditCardFieldGroup->setTitle(_t('OmnipayableForm.CREDITCARDDETAILS', 'Card Detials'));
 
         // Add credit card fields to credit card details group
         $creditCardFieldGroup->push($numberCreditCardField);

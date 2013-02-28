@@ -5,6 +5,8 @@ en:
     PAY: Pay
     SUCCESS: 'Payment successful!'
   OmnipayableForm:
+    APRIL: Apr
+    AUGUST: Aug
     BILLING: 'Billing Address'
     BILLINGADDRESS1: 'Address 1'
     BILLINGADDRESS2: 'Address 2'
@@ -14,16 +16,26 @@ en:
     BILLINGPOSTCODE: Postcode
     BILLINGSTATE: State
     COMPANY: Company
-    CREDITCARDDETAILS: 'Credit card detials'
-    CVV: CVV
+    CREDITCARDDETAILS: 'Card Detials'
+    CVV: 'Security number'
+    DECEMBER: Dec
     EMAIL: Email
     EXPIRYMONTH: 'Expiry month'
     EXPIRYYEAR: 'Expiry year'
+    FEBRUARY: Feb
     FIRSTNAME: 'First name'
     ISSUENUMBER: 'Issue number'
+    JANUARY: Jan
+    JULY: Jul
+    JUNE: Jun
     LASTNAME: 'Last name'
-    NUMBER: Number
-    PERSONALDETAILS: 'Personal detials'
+    MARCH: Mar
+    MAY: May
+    NOVEMBER: Nov
+    NUMBER: 'Card number'
+    OCTOBER: Oct
+    PERSONALDETAILS: 'Personal Detials'
+    SEPTEMBER: Sep
     SHIPPING: 'Shipping Address'
     SHIPPINGADDRESS1: 'Address 1'
     SHIPPINGADDRESS2: 'Address 2'
@@ -34,4 +46,4 @@ en:
     SHIPPINGSTATE: State
     STARTMONTH: 'Start month'
     STARTYEAR: 'Start year'
-    TYPE: Type
+    TYPE: 'Card type'
