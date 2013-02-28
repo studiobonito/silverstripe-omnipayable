@@ -239,6 +239,7 @@ abstract class OmnipayableForm extends Form
 
         // Create personal details group
         $personalFieldGroup = new FieldGroup();
+        $personalFieldGroup->setName('PersonalDetails');
         $personalFieldGroup->setTitle(_t('OmnipayableForm.PERSONALDETAILS', 'Personal Detials'));
 
         // Add basic fields to personal details group
@@ -275,6 +276,7 @@ abstract class OmnipayableForm extends Form
 
         // Create credit card details group
         $creditCardFieldGroup = new FieldGroup();
+        $creditCardFieldGroup->setName('CardDetails');
         $creditCardFieldGroup->setTitle(_t('OmnipayableForm.CREDITCARDDETAILS', 'Card Detials'));
 
         // Add credit card fields to credit card details group
@@ -299,6 +301,7 @@ abstract class OmnipayableForm extends Form
 
         // Create billing details group
         $billingFieldGroup = new FieldGroup();
+        $billingFieldGroup->setName('BillingAddress');
         $billingFieldGroup->setTitle(_t('OmnipayableForm.BILLING', 'Billing Address'));
 
         // Add billiing fields to billing group
@@ -324,6 +327,7 @@ abstract class OmnipayableForm extends Form
 
         // Create shipping details group
         $shippingFieldGroup = new FieldGroup();
+        $shippingFieldGroup->setName('ShippingAddress');
         $shippingFieldGroup->setTitle(_t('OmnipayableForm.SHIPPING', 'Shipping Address'));
 
         // Add billiing fields to shipping group
