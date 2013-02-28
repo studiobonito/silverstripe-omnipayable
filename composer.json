@@ -2,7 +2,8 @@
     "name": "studiobonito/silverstripe-omnipayable",
     "description": "The Omnipayable module adds support for the Omnipay library.",
     "type": "silverstripe-module",
-    "keywords": ["silverstripe", "omnipay"],
+    "keywords": ["silverstripe", "omnipay", "payment", "gocardless", "paypal"],
+    "license": "BSD-2-Clause",
     "authors": [
         {
             "name": "Tom Densham",
@@ -10,8 +11,8 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "3.1.*",
-        "omnipay/omnipay": "0.7.*"
+        "silverstripe/framework": "3.0.*",
+        "omnipay/omnipay": "0.8.*"
     },
     "support": {
         "issues": "https://github.com/studiobonito/silverstripe-omnipayable/issues"
