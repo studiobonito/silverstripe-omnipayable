@@ -36,8 +36,6 @@ abstract class OmnipayableForm extends Form
                 $this->gateway->$method($value);
             }
         }
-
-        $this->disableSecurityToken();
     }
 
     public function setAmount($amount)
