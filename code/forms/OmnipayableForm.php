@@ -43,6 +43,11 @@ abstract class OmnipayableForm extends Form
         $this->amount = (int) preg_replace('/([0-9]*)\.([0-9]*)/', '$1$2', $amount);
     }
 
+    public function setCurrency($currencyCode)
+    {
+        $this->gateway->setCurrency($currencyCode);
+    }
+
     public function doProcessPayment(array $data, Form $form)
     {
         try {
