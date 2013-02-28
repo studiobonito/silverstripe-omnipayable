@@ -408,6 +408,9 @@ abstract class OmnipayableForm extends Form
         $creditCardFields = $this->getCreditCardFields()->dataFields();
 
         foreach ($creditCardFields as $fieldName => $field) {
+            // If there is no value for this field then skip
+            if(!isset($data[$fieldName])) continue;
+            // Process the field value through the form field
             $field->setValue($data[$fieldName]);
             $creditCardData[$fieldName] = $field->dataValue();
             unset($data[$fieldName]);
