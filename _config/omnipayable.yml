@@ -22,3 +22,7 @@ Omnipayable:
       Signature: ''
       TestMode: true
       Currency: 'GBP'
+    Stripe:
+      ApiKey: ''
+      TestMode: true
+      Currency: 'USD'

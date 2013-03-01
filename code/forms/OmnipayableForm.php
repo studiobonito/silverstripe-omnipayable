@@ -574,3 +574,59 @@ class OmnipayableForm_PayPal_Pro extends OmnipayableForm
         return $require;
     }
 }
+
+/**
+ * OmnipayableForm_Stripe.
+ *
+ * @author Tom Densham <tom.densham@studiobonito.co.uk>
+ * @copyright (c) 2012, Studio Bonito Ltd.
+ * @version 1.0
+ */
+class OmnipayableForm_Stripe extends OmnipayableForm
+{
+    protected function getCreditCardTypes()
+    {
+        return array(
+            'visa'            => 'Visa',
+            'mastercard'      => 'Mastercard',
+            'discover'        => 'Discover',
+            'americanexpress' => 'American Express',
+            'diners_club'     => 'Diners Club',
+            'jcb'             => 'JCB'
+        );
+    }
+
+    protected function getPaymentFields()
+    {
+        $fields = parent::getPaymentFields();
+
+        $fields->removeByName('Company');
+        $fields->removeByName('Email');
+        $fields->removeByName('StartMonth');
+        $fields->removeByName('StartYear');
+        $fields->removeByName('IssueNumber');
+        $fields->removeByName('Type');
+        $fields->removeByName('BillingPhone');
+        $fields->removeByName('ShippingAddress');
+
+        return $fields;
+    }
+
+    protected function getRequiredFields()
+    {
+        $require = parent::getRequiredFields();
+
+        $extraRequiredFields = new RequiredFields(array(
+            'FirstName',
+            'LastName',
+            'Number',
+            'Cvv',
+            'ExpiryMonth',
+            'ExpiryYear'
+        ));
+
+        $require->appendRequiredFields($extraRequiredFields);
+
+        return $require;
+    }
+}

@@ -10,6 +10,7 @@ The following forms are currently implemented:
  * GoCardless
  * PayPal Express Checkout
  * PayPal Payments Pro
+ * Stripe
 
 ## Requirements
 
@@ -26,7 +27,7 @@ To do so, simply add it to the `composer.json` file in the root of your SilverSt
 ```json
 {
     "require": {
-        "studiobonito/silverstripe-omnipayable": "0.1.*"
+        "studiobonito/silverstripe-omnipayable": "0.2.*"
     }
 }
 ```
