@@ -42,6 +42,47 @@ Copy the 'omnipayable' folder to the root of your SilverStripe installation.
 
 ## Usage Overview
 
+There is a factory method provided to with form creation.
+This will create the correct form for the currently configured gateway:
+
+```php
+$form = OmnipayableForm::create($this, 'PaymentForm');
+```
+
+Alternatively you can create the form directly:
+
+```php
+$form = new OmnipayableForm_GoCardless($this, 'PaymentForm');
+```
+
+Once the form is created you can set the amount that will be charged:
+
+```php
+$form->setAmount('10.00');
+```
+
+### Complete Example
+
+```php
+class Page_Controller extends ContentController
+{
+    public static $allowed_actions = array(
+        'PaymentForm'
+    );
+
+    public function PaymentForm()
+    {
+        $form = OmnipayableForm::create($this, 'PaymentForm');
+
+        $form->setAmount('10.00');
+
+        return $form;
+    }
+}
+```
+
+When adding the form to a `Controller` remember to add the forms name to the `$allowed_actions` array.
+
 ### Payment Form Fields
 
 The base form provides form fields for all of the currently supported properties of the Omnipay `CreditCard` object.
