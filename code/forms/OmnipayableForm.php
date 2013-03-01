@@ -26,6 +26,26 @@ abstract class OmnipayableForm extends Form
     protected $amount;
 
     /**
+     * Factory method for creating the correct form for the currently configured gateway.
+     *
+     * @return OmnipayableForm
+     */
+    public static function create()
+    {
+        $args = func_get_args();
+
+        $gateway = Config::inst()->get('Omnipayable', 'Gateway');
+
+        $paymentFormClass = "OmnipayableForm_{$gateway}";
+
+        if(!class_exists($paymentFormClass)) {
+            user_error('There is no OmnipayableForm implemented for the currently configured gateway.', E_USER_ERROR);
+        }
+
+        return Injector::inst()->createWithArgs($paymentFormClass, $args);
+    }
+
+    /**
      * Create the Form and the relevant gateway.
      * Set properties on gateway from config.
      *

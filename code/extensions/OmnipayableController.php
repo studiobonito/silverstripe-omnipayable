@@ -15,11 +15,7 @@ class OmnipayableController extends Extension
 
     public function PaymentForm()
     {
-        $gateway = Config::inst()->get('Omnipayable', 'Gateway');
-
-        $paymentForm = "OmnipayableForm_{$gateway}";
-
-        $form = new $paymentForm($this->owner, 'PaymentForm');
+        $form = OmnipayableForm::create($this->owner, 'PaymentForm');
 
         $form->setAmount($this->owner->Price);
 
