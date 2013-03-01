@@ -251,11 +251,17 @@ abstract class OmnipayableForm extends Form
     {
         $fields = new FieldList();
 
+        $tabindex = 1;
+
         // Create personal detail fields
         $firstNameTextField = new TextField('FirstName', _t('OmnipayableForm.FIRSTNAME', 'First name'));
+        $firstNameTextField->setAttribute('tabindex', $tabindex++);
         $lastNameTextField = new TextField('LastName', _t('OmnipayableForm.LASTNAME', 'Last name'));
+        $lastNameTextField->setAttribute('tabindex', $tabindex++);
         $companyTextField = new TextField('Company', _t('OmnipayableForm.COMPANY', 'Company'));
+        $companyTextField->setAttribute('tabindex', $tabindex++);
         $emailEmailField = new EmailField('Email', _t('OmnipayableForm.EMAIL', 'Email'));
+        $emailEmailField->setAttribute('tabindex', $tabindex++);
 
         // Create personal details group
         $personalFieldGroup = new FieldGroup();
@@ -273,17 +279,25 @@ abstract class OmnipayableForm extends Form
 
         // Create credit card detail fields
         $numberCreditCardField = new CreditCardField('Number', _t('OmnipayableForm.NUMBER', 'Card number'));
+        $numberCreditCardField->setAttribute('tabindex', $tabindex++);
         $cvvTextField = new TextField('Cvv', _t('OmnipayableForm.CVV', 'Security number'));
+        $cvvTextField->setAttribute('tabindex', $tabindex+=3);
         $expiryMonthDropdownField = new DropdownField('ExpiryMonth', _t('OmnipayableForm.EXPIRYMONTH', 'Expiry month'), $this->getMonths());
+        $expiryMonthDropdownField->setAttribute('tabindex', $tabindex++);
         $expiryMonthDropdownField->setHasEmptyDefault(true);
         $expiryYearDropdownField = new DropdownField('ExpiryYear', _t('OmnipayableForm.EXPIRYYEAR', 'Expiry year'), $this->getYears(20));
+        $expiryYearDropdownField->setAttribute('tabindex', $tabindex++);
         $expiryYearDropdownField->setHasEmptyDefault(true);
         $startMonthDropdownField = new DropdownField('StartMonth', _t('OmnipayableForm.STARTMONTH', 'Start month'), $this->getMonths());
+        $startMonthDropdownField->setAttribute('tabindex', $tabindex++);
         $startMonthDropdownField->setHasEmptyDefault(true);
         $startYearDropdownField = new DropdownField('StartYear', _t('OmnipayableForm.STARTYEAR', 'Start year'), $this->getYears(-20));
+        $startYearDropdownField->setAttribute('tabindex', $tabindex++);
         $startYearDropdownField->setHasEmptyDefault(true);
         $issueNumberTextField = new TextField('IssueNumber', _t('OmnipayableForm.ISSUENUMBER', 'Issue number'));
+        $issueNumberTextField->setAttribute('tabindex', $tabindex++);
         $typeDropdownField = new DropdownField('Type', _t('OmnipayableForm.TYPE', 'Card type'), $this->getCreditCardTypes());
+        $typeDropdownField->setAttribute('tabindex', $tabindex++);
         $typeDropdownField->setHasEmptyDefault(true);
 
         $expiryDateFieldGroup = new FieldGroup();
@@ -312,12 +326,19 @@ abstract class OmnipayableForm extends Form
 
         // Create billing address fields
         $billingAddress1TextField = new TextField('BillingAddress1', _t('OmnipayableForm.BILLINGADDRESS1', 'Address 1'));
+        $billingAddress1TextField->setAttribute('tabindex', $tabindex++);
         $billingAddress2TextField = new TextField('BillingAddress2', _t('OmnipayableForm.BILLINGADDRESS2', 'Address 2'));
+        $billingAddress2TextField->setAttribute('tabindex', $tabindex++);
         $billingCity = new TextField('BillingCity', _t('OmnipayableForm.BILLINGCITY', 'City'));
+        $billingCity->setAttribute('tabindex', $tabindex++);
         $billingPostcode = new TextField('BillingPostcode', _t('OmnipayableForm.BILLINGPOSTCODE', 'Postcode'));
+        $billingPostcode->setAttribute('tabindex', $tabindex++);
         $billingState = new TextField('BillingState', _t('OmnipayableForm.BILLINGSTATE', 'State'));
+        $billingState->setAttribute('tabindex', $tabindex++);
         $billingCountry = new CountryDropdownField('BillingCountry', _t('OmnipayableForm.BILLINGCOUNTRY', 'Country'));
+        $billingCountry->setAttribute('tabindex', $tabindex++);
         $billingPhone = new PhoneNumberField('BillingPhone', _t('OmnipayableForm.BILLINGPHONE', 'Phone'));
+        $billingPhone->setAttribute('tabindex', $tabindex++);
 
         // Create billing details group
         $billingFieldGroup = new FieldGroup();
@@ -338,12 +359,19 @@ abstract class OmnipayableForm extends Form
 
         // Create shipping address fields
         $shippingAddress1TextField = new TextField('ShippingAddress1', _t('OmnipayableForm.SHIPPINGADDRESS1', 'Address 1'));
+        $shippingAddress1TextField->setAttribute('tabindex', $tabindex++);
         $shippingAddress2TextField = new TextField('ShippingAddress2', _t('OmnipayableForm.SHIPPINGADDRESS2', 'Address 2'));
+        $shippingAddress2TextField->setAttribute('tabindex', $tabindex++);
         $shippingCity = new TextField('ShippingCity', _t('OmnipayableForm.SHIPPINGCITY', 'City'));
+        $shippingCity->setAttribute('tabindex', $tabindex++);
         $shippingPostcode = new TextField('ShippingPostcode', _t('OmnipayableForm.SHIPPINGPOSTCODE', 'Postcode'));
+        $shippingPostcode->setAttribute('tabindex', $tabindex++);
         $shippingState = new TextField('ShippingState', _t('OmnipayableForm.SHIPPINGSTATE', 'State'));
+        $shippingState->setAttribute('tabindex', $tabindex++);
         $shippingCountry = new CountryDropdownField('ShippingCountry', _t('OmnipayableForm.SHIPPINGCOUNTRY', 'Country'));
+        $shippingCountry->setAttribute('tabindex', $tabindex++);
         $shippingPhone = new PhoneNumberField('ShippingPhone', _t('OmnipayableForm.SHIPPINGPHONE', 'Phone'));
+        $shippingPhone->setAttribute('tabindex', $tabindex++);
 
         // Create shipping details group
         $shippingFieldGroup = new FieldGroup();
