@@ -1,0 +1,24 @@
+Omnipayable:
+  Gateway: ''
+  Gateways:
+    GoCardless:
+      AppId: ''
+      AppSecret: ''
+      MerchantId: ''
+      AccessToken: ''
+      TestMode: true
+      Currency: 'GBP'
+    PayPal_Express:
+      SolutionType: 'Mark'
+      LandingPage: 'Login'
+      Username: ''
+      Password: ''
+      Signature: ''
+      TestMode: true
+      Currency: 'GBP'
+    PayPal_Pro:
+      Username: ''
+      Password: ''
+      Signature: ''
+      TestMode: true
+      Currency: 'GBP'

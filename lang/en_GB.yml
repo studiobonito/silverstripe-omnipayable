@@ -1,0 +1,49 @@
+en_GB:
+  Omnipayable:
+    ERROR: 'There was an error processing your payment. Please try agian later.'
+    FAILURE: '{message}'
+    PAY: Pay
+    SUCCESS: 'Payment successful!'
+  OmnipayableForm:
+    APRIL: Apr
+    AUGUST: Aug
+    BILLING: 'Billing Address'
+    BILLINGADDRESS1: 'Address 1'
+    BILLINGADDRESS2: 'Address 2'
+    BILLINGCITY: City
+    BILLINGCOUNTRY: Country
+    BILLINGPHONE: Phone
+    BILLINGPOSTCODE: Postcode
+    BILLINGSTATE: State
+    COMPANY: Company
+    CREDITCARDDETAILS: 'Card Detials'
+    CVV: 'Security number'
+    DECEMBER: Dec
+    EMAIL: Email
+    EXPIRYMONTH: 'Expiry month'
+    EXPIRYYEAR: 'Expiry year'
+    FEBRUARY: Feb
+    FIRSTNAME: 'First name'
+    ISSUENUMBER: 'Issue number'
+    JANUARY: Jan
+    JULY: Jul
+    JUNE: Jun
+    LASTNAME: 'Last name'
+    MARCH: Mar
+    MAY: May
+    NOVEMBER: Nov
+    NUMBER: 'Card number'
+    OCTOBER: Oct
+    PERSONALDETAILS: 'Personal Detials'
+    SEPTEMBER: Sep
+    SHIPPING: 'Shipping Address'
+    SHIPPINGADDRESS1: 'Address 1'
+    SHIPPINGADDRESS2: 'Address 2'
+    SHIPPINGCITY: City
+    SHIPPINGCOUNTRY: Country
+    SHIPPINGPHONE: Phone
+    SHIPPINGPOSTCODE: Postcode
+    SHIPPINGSTATE: County
+    STARTMONTH: 'Start month'
+    STARTYEAR: 'Start year'
+    TYPE: 'Card type'
