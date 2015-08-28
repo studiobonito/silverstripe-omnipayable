@@ -1,3 +1,8 @@
+# WARNING: Module depreciated
+
+This SilverStripe module is depreciated please consider using the
+[`silverstripe-omnipay`](https://github.com/burnbright/silverstripe-omnipay) module instead.
+
 # Omnipayable Module
 
 ## Overview
